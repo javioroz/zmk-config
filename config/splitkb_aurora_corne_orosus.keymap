@@ -17,6 +17,7 @@
 // #define ADJUST 3
 // #define ASERT 4
 // #define MINIMAK 5
+// #define ASET 6
 // ------ main bracket ---------------------------------------------------------------------
 / {
     // -------------------------------------------------------------------------------------------------------------------------
@@ -77,10 +78,8 @@
 //                               |   GUI   |         |   SPC   |   |   ENT   |         |   ALT   |
                           	      &kp LGUI   &trans    &kp SPACE    &kp RET    &trans   &kp RALT
 //                               └─────────┴─────────┴─────────┘   └─────────┴─────────┴─────────┘
-
             >;
         };
-
         raise_layer {
             bindings = <
 // ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐   ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐ 
@@ -96,10 +95,9 @@
 //                               |   GUI   |         |  SPACE  |   |  ENTER  |         |   ALT   |
                           	      &kp LGUI   &trans    &kp SPACE    &kp RET    &trans   &kp RALT
 //                               └─────────┴─────────┴─────────┘   └─────────┴─────────┴─────────┘
-
             >;
         };
-        tri_layer {
+        adjust_layer {
             bindings = <
 // ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐   ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐ 
 // |  BTCLR  |  BT1    |  BT2    |  BT3    |  BT4    |         |   |         |         |         |         |         |TO QWERTY|
@@ -108,13 +106,12 @@
 // |         |         | MS_BTN1 |  WH_UP  | MS_BTN2 |         |   |  Play   |  Prev   | MOUSEUP |  Next   |         |TO ASERT |
      &trans     &trans   &trans    &trans    &trans    &trans        &trans   &trans    &trans    &trans     &trans    &tog 4
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
-// |         |         |         |  WH_DO  |         |         |   |  Stop   | MOUSERI | MOUSEDO | MOUSELE |         |TO MINIMAK|
-     &trans    &trans    &trans    &trans    &trans     &trans        &trans    &trans   &trans    &trans    &trans    &tog 5 
+// |         |         |         |  WH_DO  |         |         |   |  Stop   | MOUSERI | MOUSEDO | MOUSELE | TO ASET |TO MINIMAK|
+     &trans    &trans    &trans    &trans    &trans     &trans        &trans    &trans   &trans    &trans    &tog 6    &tog 5 
 // └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘ 
 //                               |   GUI   |  LOWER  |  SPACE  |   |  ENTER  |  RAISE  |   ALT   |
                                   &kp LGUI  &mo 1     &kp SPACE     &kp RET   &mo 2     &kp RALT
 //                               └─────────┴─────────┴─────────┘   └─────────┴─────────┴─────────┘
-
             >;
         };
         asert_layer {
@@ -124,7 +121,7 @@
     &kp TAB   &kp Q     &kp W     &kp D     &kp F     &kp G         &kp Y     &kp U     &kp K     &kp L     &kp SEMI   &kp BSPC
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |  CTRL   |    A    |    S    |    E    |    R    |    T    |   |    H    |    N    |    I    |    O    |    P    |    '    |
-   &kp LCTRL  &kp A     &kp R     &kp S     &kp T     &kp D         &kp H     &kp N     &kp I     &kp O     &kp P      &kp SQT
+   &kp LCTRL  &kp A     &kp S     &kp E     &kp R     &kp T         &kp H     &kp N     &kp I     &kp O     &kp P      &kp SQT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |  SHFT   |    Z    |    X    |    C    |    V    |    B    |   |    J    |    M    |    ,    |    .    |    /    |   ESC   |
    &kp LSHFT  &kp Z     &kp X     &kp C     &kp V     &kp B         &kp J     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp ESC
@@ -141,7 +138,24 @@
     &kp TAB   &kp Q     &kp W     &kp D     &kp F     &kp K         &kp Y     &kp U     &kp I     &kp L     &kp SEMI   &kp BSPC
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |  CTRL   |    A    |    S    |    T    |    R    |    G    |   |    H    |    N    |    E    |    O    |    P    |    '    |
-   &kp LCTRL  &kp A     &kp R     &kp T     &kp R     &kp G         &kp H     &kp N     &kp I     &kp O     &kp N      &kp SQT
+   &kp LCTRL  &kp A     &kp S     &kp T     &kp R     &kp G         &kp H     &kp N     &kp I     &kp O     &kp N      &kp SQT
+// ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
+// |  SHFT   |    Z    |    X    |    C    |    V    |    B    |   |    J    |    M    |    ,    |    .    |    /    |   ESC   |
+   &kp LSHFT  &kp Z     &kp X     &kp C     &kp V     &kp B         &kp J     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp ESC
+// └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘ 
+//                               |   GUI   |  LOWER  |  SPACE  |   |  ENTER  |  RAISE  |   ALT   |
+                                  &kp LGUI  &mo 1     &kp SPACE     &kp RET   &mo 2     &kp RALT
+//                               └─────────┴─────────┴─────────┘   └─────────┴─────────┴─────────┘
+            >;
+        };
+        aset_layer {
+             bindings = <
+// ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐   ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐ 
+// |   TAB   |    Q    |    W    |    D    |    R    |    F    |   |    Y    |    U    |    K    |    L    |    ;    |   BKSP  |
+    &kp TAB   &kp Q     &kp W     &kp D     &kp R     &kp F         &kp Y     &kp U     &kp K     &kp L     &kp SEMI   &kp BSPC
+// ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
+// |  CTRL   |    A    |    S    |    E    |    T    |    G    |   |    H    |    N    |    I    |    O    |    P    |    '    |
+   &kp LCTRL  &kp A     &kp R     &kp E     &kp T     &kp D         &kp H     &kp N     &kp I     &kp O     &kp P      &kp SQT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |  SHFT   |    Z    |    X    |    C    |    V    |    B    |   |    J    |    M    |    ,    |    .    |    /    |   ESC   |
    &kp LSHFT  &kp Z     &kp X     &kp C     &kp V     &kp B         &kp J     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp ESC
