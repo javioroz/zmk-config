@@ -33,7 +33,7 @@
     &kp DEL   &kp A     &kp S     &kp E     &kp R     &kp T         &kp H     &kp N     &kp I     &kp O     &kp P      &kp SQT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |  SHFT   |    Z    |    X    |    C    |    V    |    B    |   |    J    |    M    |    ,    |    .    |    /    | ENTER   |
-   &kp LSHFT  &kp Z     &kp X     &kp C     &kp V     &kp B         &kp J     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &mt RCTRL RET
+   &kp LSHFT  &kp Z     &kp X     &kp C     &kp V    &mt LALT B     &kp J     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &mt RCTRL RET
 // └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘ 
 //                               |   GUI   |  LOWER  |  SPACE  |   |  ENTER  |  RAISE  |   ALT   |
                                   &kp LGUI  &mo 1   &mt LCTRL SPACE    &kp RET   &mo 2     &kp RALT
