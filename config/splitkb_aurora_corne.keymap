@@ -21,14 +21,15 @@
 // |  DEL    |    A    |    S    |    D    |    F    |    G    |   |    H    |    J    |    K    |    L    |    ;    |    '    |
    &kp DEL    &kp A     &kp S     &kp D     &kp F     &kp G         &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
-// |  SHFT   |    Z    |    X    |    C    |    V    |    B    |   |    N    |    M    |    ,    |    .    |    /    |   CTRL  |
-   &kp LSHFT  &kp Z     &kp X     &kp C     &kp V     &kp B         &kp N     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp LCTRL
+// |  SHFT   |    Z    |    X    |    C    |    V    |    B    |   |    N    |    M    |    ,    |    .    |    /    |  ENTER  |
+   &kp LSHFT  &kp Z     &kp X     &kp C     &kp V     &kp B         &kp N     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RET
 // └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘ 
 //                               |   GUI   |  LOWER  |  SPACE  |   |  ENTER  |  RAISE  |   ALT   |
                                   &kp LGUI  &mo 1     &kp SPACE     &kp RET   &mo 2     &kp RALT
 //                               └─────────┴─────────┴─────────┘   └─────────┴─────────┴─────────┘
             >;
         };
+        
         lower_layer {
             bindings = <
 // ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐   ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐ 
@@ -36,14 +37,15 @@
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5        &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp BSPC
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |   ESC   |    4    |    5    |    6    |    .    |    ,    |   |  Mute   |  VOL-   |   UP    |  VOL+   |    Ñ    |    \    |
-    &kp ESC   &kp N4    &kp N5    &kp N6    &kp DOT   &kp COMMA    &kp C_MUTE  C_VOL_DN   &kp UP   C_VOL_UP &kp RA(N)  &kp BSLH 
+    &kp ESC   &kp N4    &kp N5    &kp N6    &kp DOT   &kp COMMA   &kp C_MUTE &kp C_VOL_DN &kp UP &kp C_VOL_UP &kp RA(N)  &kp BSLH 
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
-// |   SHFT  |    7    |    8    |    9    |    0    |    €    |   | PrnScrn |   LFT   |  DWN    |   RGT   | INSERT  |   CTRL  |
-    &kp LSHFT  &kp N7   &kp N8    &kp N9    &kp N0     &trans      &kp PSCRN  &kp LEFT  &kp DOWN &kp RIGHT  &kp INS   &kp RCTRL
+// |   SHFT  |    7    |    8    |    9    |    0    |    €    |   | PrnScrn |   LFT   |  DWN    |   RGT   | INSERT  |  ENTER  |
+    &kp LSHFT  &kp N7   &kp N8    &kp N9    &kp N0     &trans      &kp PSCRN  &kp LEFT  &kp DOWN &kp RIGHT  &kp INS   &kp RET
 // └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘ 
 //                               |   GUI   |         |   SPC   |   |   ENT   |         |   ALT   |
                           	  &kp LGUI    &trans    &kp SPACE    &kp RET    &trans    &kp RALT
 //                               └─────────┴─────────┴─────────┘   └─────────┴─────────┴─────────┘
+                                                 // if hold CTRL
             >;
         };
 
