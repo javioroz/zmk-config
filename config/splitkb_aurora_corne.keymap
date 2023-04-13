@@ -84,10 +84,10 @@
 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 ___     ___          ___       ___       ___       ___       ___     &tog 0  
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |         |         | MS_BTN1 |  WH_UP  | MS_BTN2 |         |   |  Play   |  Prev   | MOUSEUP |  Next   |         |TO ASERT |
-       ___       ___       ___       ___       ___       ___            ___       ___       ___       ___       ___    &tog 4   
+       ___       ___       ___       ___       ___       ___          C_PP     C_PREV     ___      C_NEXT      ___    &tog 4   
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |         |         |         |  WH_DO  |         |         |   |  Stop   | MOUSERI | MOUSEDO | MOUSELE |         |         |
-       ___       ___       ___       ___       ___       ___            ___       ___       ___       ___       ___       ___    
+       ___       ___       ___       ___       ___       ___          c_STOP     ___       ___       ___       ___       ___    
 // └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘ 
 //                               |         |         |         |   |         |         |         |
                           	         ___       ___        ___          ___       ___        ___  
@@ -104,7 +104,7 @@
 // |  DEL    |    A    |    S    |    E    |    R    |    T    |   |    H    |    N    |    I    |    O    |    P    |    '    |
     &kp DEL   &kp A     &kp S     &kp E     &kp R     &kp T         &kp H     &kp N     &kp I     &kp O     &kp P      &kp SQT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
-// |  SHFT   |    Z    |    X    |    C    |    V    |    B    |   |    J    |    M    |    ,    |    .    |    /    |   ESC   |
+// |  SHFT   |    Z    |    X    |    C    |    V    |    B    |   |    J    |    M    |    ,    |    .    |    /    | ENTER   |
    &kp LSHFT  &kp Z     &kp X     &kp C     &kp V     &kp B         &kp J     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &mt RCTRL RET
 // └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘ 
 //                               |   GUI   |  LOWER  |  SPACE  |   |  ENTER  |  RAISE  |   ALT   |
@@ -124,7 +124,7 @@
 // &bt: bluetooth function
 // &mo: momentary layout change (only while key is holded)
 // &ht: hold-tap will output the 1st key if it's held for a while, and output the 2nd when it's tapped quickly
-// &mt: 
+// &mt: modifier if hold or key if tap
 // &tog: switches to layer number and we keep staying on that new label
 // 
 // Letter frequency:
