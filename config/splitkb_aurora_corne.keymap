@@ -14,9 +14,9 @@
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
+        adjust_layer {
+            if-layers = <2 3>;
+            then-layer = <4>;
         };
     };
     
@@ -33,10 +33,28 @@
  &mt LCTRL DEL &kp A     &kp S     &kp E     &kp T     &kp G         &kp H     &kp N     &kp I     &kp O     &kp P      &kp SQT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |  SHFT   |    Z    |    X    |    C    |    V    |    B    |   |    J    |    M    |    ,    |    .    |    /    | ENTER   |
-   &kp LSHFT  &kp Z     &kp X     &kp C     &kp V     &kp B         &kp J     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &mt RCTRL RET
+&mt LSHFT CAPS &kp Z     &kp X     &kp C     &kp V     &kp B         &kp J     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &mt RCTRL RET
 // └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘ 
 //                               |   ALT   |  LOWER  |  SPACE  |   |  ENTER  |  RAISE  |   GUI   |
-                                  &kp LALT   &mo 1    &kp SPACE    &kp RET   &mo 2     &kp LGUI
+                                  &kp LALT   &mo 2    &kp SPACE   &mt RSHFT RET   &mo 3   &kp LGUI
+//                               └─────────┴─────────┴─────────┘   └─────────┴─────────┴─────────┘
+            >;
+        };
+        
+        qwerty_layer {
+            bindings = <
+// ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐   ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐ 
+// |   TAB   |    Q    |    W    |    E    |    R    |    T    |   |    Y    |    U    |    I    |    O    |    P    |   BKSP  |
+    &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T         &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
+// ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
+// |  DEL    |    A    |    S    |    D    |    F    |    G    |   |    H    |    J    |    K    |    L    |    ;    |    '    |
+ &mt LCTRL DEL &kp A     &kp S     &kp D     &kp F     &kp G         &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
+// ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
+// |  SHFT   |    Z    |    X    |    C    |    V    |    B    |   |    N    |    M    |    ,    |    .    |    /    | ENTER   |
+   &kp LSHFT  &kp Z   &mt LGUI X &mt LCTRL C  &kp V     &kp B      &kp N     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &mt RCTRL RET
+// └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘ 
+//                               |   ALT   |  LOWER  |  SPACE  |   |  ENTER  |  RAISE  |   GUI   |
+                                  &kp LALT   &mo 2    &kp SPACE   &mt RSHFT RET   &mo 3   &kp LGUI
 //                               └─────────┴─────────┴─────────┘   └─────────┴─────────┴─────────┘
             >;
         };
@@ -53,8 +71,8 @@
 // |         |    7    |    8    |    9    |    0    |    €    |   | PrnScrn |   LFT   |  DWN    |   RGT   | INSERT  |  ESC    |
        ___    &kp N7   &kp N8    &kp N9    &kp N0     &kp RA(N5)   &kp PSCRN  &kp LEFT  &kp DOWN &kp RIGHT  &kp INS    &kp ESC
 // └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘ 
-//                               |         |         |         |   |         |         |         |
-                          	         ___       ___        ___          ___       ___        ___  
+//                               |         |         |         |   |  ENTER  |         |         |
+                          	         ___       ___        ___        &kp RET     ___        ___  
 //                               └─────────┴─────────┴─────────┘   └─────────┴─────────┴─────────┘
             >;
         };
@@ -77,11 +95,11 @@
             >;
         };
         
-        tri_layer {
+        adjust_layer {
             bindings = <
 // ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐   ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐ 
 // |  BTCLR  |  BT1    |  BT2    |  BT3    |  BT4    |         |   |         |         |         |         |         |TO QWERTY|
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 ___     ___       ___       ___       ___       ___     &tog 4  
+&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 ___     ___       ___       ___       ___       ___     &tog 1  
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |         |         | MS_BTN1 |  WH_UP  | MS_BTN2 |         |   |  Play   |  Prev   | MOUSEUP |  Next   |         | TO ASET |
        ___       ___       ___       ___       ___       ___       &kp C_PP  &kp C_PREV     ___  &kp C_NEXT      ___    &tog 0   
@@ -94,26 +112,7 @@
 //                               └─────────┴─────────┴─────────┘   └─────────┴─────────┴─────────┘
             >;
         };    
-        
-        qwerty_layer {
-            bindings = <
-// ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐   ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐ 
-// |   TAB   |    Q    |    W    |    E    |    R    |    T    |   |    Y    |    U    |    I    |    O    |    P    |   BKSP  |
-    &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T         &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
-// ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
-// |  DEL    |    A    |    S    |    D    |    F    |    G    |   |    H    |    J    |    K    |    L    |    ;    |    '    |
- &mt LCTRL DEL &kp A     &kp S     &kp D     &kp F     &kp G         &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
-// ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
-// |  SHFT   |    Z    |    X    |    C    |    V    |    B    |   |    N    |    M    |    ,    |    .    |    /    | ENTER   |
-   &kp LSHFT  &kp Z   &mt LGUI X &mt LCTRL C  &kp V     &kp B      &kp N     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &mt RCTRL RET
-// └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘ 
-//                               |   ALT   |  LOWER  |  SPACE  |   |  ENTER  |  RAISE  |   GUI   |
-                                  &kp LALT   &mo 1    &kp SPACE    &kp RET   &mo 2     &kp LGUI
-//                               └─────────┴─────────┴─────────┘   └─────────┴─────────┴─────────┘
-            >;
-        };
-        
-        
+               
     }; 
     // ------ keymap bracket ends
 }; 
