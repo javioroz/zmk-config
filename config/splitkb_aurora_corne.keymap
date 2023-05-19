@@ -9,9 +9,9 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define ___ &trans
-#define ASET 0 
+#define COLEMAK 0 
 #define QWERTY 1
-#define COLEMAK 2
+#define ASET 2
 #define LOWER 3
 #define RAISE 4
 #define ADJUST 5
@@ -29,17 +29,17 @@
     keymap {
         compatible = "zmk,keymap";
         
-        aset_layer {
-             bindings = <
+        colemak_layer {
+            bindings = <
 // ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐   ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐ 
-// |   TAB   |    Q    |    W    |    D    |    R    |    F    |   |    Y    |    U    |    K    |    L    |    ;    |   BKSP  |
-&mt LGUI TAB   &kp Q     &kp W     &kp D     &kp R     &kp F         &kp Y     &kp U     &kp K     &kp L     &kp SEMI   &kp BSPC
+// |   TAB   |    Q    |    W    |    F    |    P    |    G    |   |    J    |    L    |    U    |    Y    |    ;    |   BKSP  |
+&mt LGUI TAB   &kp Q     &kp W     &kp F     &kp P     &kp G         &kp J     &kp L     &kp U     &kp Y     &kp SEMI   &kp BSPC
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
-// |  DEL    |    A    |    S    |    E    |    T    |    G    |   |    H    |    N    |    I    |    O    |    P    |    '    |
- &mt LCTRL DEL &kp A     &kp S     &kp E     &kp T     &kp G         &kp H     &kp N     &kp I     &kp O     &kp P   &mt RCTRL SQT
+// |  DEL    |    A    |    R    |    S    |    T    |    D    |   |    H    |    N    |    E    |    I    |    O    |    '    |
+ &mt LCTRL DEL &kp A     &kp R     &kp S     &kp T     &kp D         &kp H     &kp N     &kp E     &kp I     &kp O  &mt RCTRL SQT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
-// |  SHFT   |    Z    |    X    |    C    |    V    |    B    |   |    J    |    M    |    ,    |    .    |    /    | ENTER   |
-   &kp LSHFT   &kp Z     &kp X     &kp C     &kp V     &kp B         &kp J     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp  RET
+// |  SHFT   |    Z    |    X    |    C    |    V    |    B    |   |    K    |    M    |    ,    |    .    |    /    | ENTER   |
+   &kp LSHFT  &kp Z      &kp X     &kp C     &kp V     &kp B        &kp K     &kp M     &kp COMMA  &kp DOT   &kp FSLH   &kp  RET
 // └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘ 
 //                               |   ALT   |  LOWER  |  SPACE  |   |  ENTER  |  RAISE  |   GUI   |
                                   &kp LALT  &mo LOWER  &kp SPACE   &mt RSHFT RET &mo RAISE &mt LGUI BSPC
@@ -57,7 +57,7 @@
  &mt LCTRL DEL &kp A     &kp S     &kp D     &kp F     &kp G         &kp H     &kp J     &kp K     &kp L     &kp SEMI &mt RCTRL SQT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |  SHFT   |    Z    |    X    |    C    |    V    |    B    |   |    N    |    M    |    ,    |    .    |    /    | ENTER   |
-   &kp LSHFT  &kp Z   &mt LGUI X &mt LCTRL C  &kp V     &kp B      &kp N     &kp M     &kp COMMA  &kp DOT   &kp FSLH   &kp  RET
+   &kp LSHFT  &kp Z      &kp X     &kp C     &kp V     &kp B        &kp N     &kp M     &kp COMMA  &kp DOT   &kp FSLH   &kp  RET
 // └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘ 
 //                               |   ALT   |  LOWER  |  SPACE  |   |  ENTER  |  RAISE  |   GUI   |
                                   &kp LALT  &mo LOWER  &kp SPACE   &mt RSHFT RET &mo RAISE &mt LGUI BSPC
@@ -65,17 +65,17 @@
             >;
         };
         
-        colemak_layer {
-            bindings = <
+        aset_layer {
+             bindings = <
 // ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐   ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐ 
-// |   TAB   |    Q    |    W    |    F    |    P    |    G    |   |    J    |    L    |    U    |    Y    |    ;    |   BKSP  |
-&mt LGUI TAB   &kp Q     &kp W     &kp F     &kp P     &kp G         &kp J     &kp L     &kp U     &kp Y     &kp SEMI   &kp BSPC
+// |   TAB   |    Q    |    W    |    D    |    R    |    F    |   |    Y    |    U    |    K    |    L    |    ;    |   BKSP  |
+&mt LGUI TAB   &kp Q     &kp W     &kp D     &kp R     &kp F         &kp Y     &kp U     &kp K     &kp L     &kp SEMI   &kp BSPC
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
-// |  DEL    |    A    |    R    |    S    |    T    |    D    |   |    H    |    N    |    E    |    I    |    O    |    '    |
- &mt LCTRL DEL &kp A     &kp R     &kp S     &kp T     &kp D         &kp H     &kp N     &kp E     &kp I     &kp O  &mt RCTRL SQT
+// |  DEL    |    A    |    S    |    E    |    T    |    G    |   |    H    |    N    |    I    |    O    |    P    |    '    |
+ &mt LCTRL DEL &kp A     &kp S     &kp E     &kp T     &kp G         &kp H     &kp N     &kp I     &kp O     &kp P   &mt RCTRL SQT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
-// |  SHFT   |    Z    |    X    |    C    |    V    |    B    |   |    K    |    M    |    ,    |    .    |    /    | ENTER   |
-   &kp LSHFT  &kp Z   &mt LGUI X &mt LCTRL C  &kp V     &kp B      &kp K     &kp M     &kp COMMA  &kp DOT   &kp FSLH   &kp  RET
+// |  SHFT   |    Z    |    X    |    C    |    V    |    B    |   |    J    |    M    |    ,    |    .    |    /    | ENTER   |
+   &kp LSHFT   &kp Z     &kp X     &kp C     &kp V     &kp B         &kp J     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp  RET
 // └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘ 
 //                               |   ALT   |  LOWER  |  SPACE  |   |  ENTER  |  RAISE  |   GUI   |
                                   &kp LALT  &mo LOWER  &kp SPACE   &mt RSHFT RET &mo RAISE &mt LGUI BSPC
