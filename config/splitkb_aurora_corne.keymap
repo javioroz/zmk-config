@@ -56,7 +56,7 @@
 // |  LSHFT  |    Z    |    X    |    C    |    V    |    B    |   |    K    |    M    |    ,    |    .    |    /    | ENTER   |
    &kp LSHFT  &kp Z      &kp X     &kp C     &kp V     &kp B        &kp K     &kp M     &kp COMMA  &kp DOT   &kp FSLH   &kp  RET
 // └─────────┴─────────┼─────────┴───┬─────┴──────┬──┴─────────┤   ├─────────┴──┬──────┴─────┬───┴─────────┼─────────┴─────────┘ 
-                        &mt LALT RET  &mo LOWER  &hm SPACE LCTRL  &mt SPACE RSHFT  &mo RAISE  &mt LGUI CAPS
+                        &mt LALT RET  &mo LOWER  &bhm SPACE LCTRL  &mt SPACE RSHFT  &mo RAISE  &mt LGUI CAPS
 //                     └─────────────┴────────────┴────────────┘   └────────────┴────────────┴─────────────┘
             >;
         };
@@ -73,7 +73,7 @@
 // |  LSHFT  |    Z    |    X    |    C    |    V    |    B    |   |    N    |    M    |    ,    |    .    |    /    | ENTER   |
    &kp LSHFT  &kp Z      &kp X     &kp C     &kp V     &kp B        &kp N     &kp M     &kp COMMA  &kp DOT   &kp FSLH   &kp  RET
 // └─────────┴─────────┼─────────┴───┬─────┴──────┬──┴─────────┤   ├─────────┴──┬──────┴─────┬───┴─────────┼─────────┴─────────┘ 
-                        &mt LALT RET  &mo LOWER  &hm SPACE LCTRL  &mt SPACE RSHFT  &mo RAISE  &mt LGUI CAPS
+                        &mt LALT RET  &mo LOWER  &bhm SPACE LCTRL  &mt SPACE RSHFT  &mo RAISE  &mt LGUI CAPS
 //                     └─────────────┴────────────┴────────────┘   └────────────┴────────────┴─────────────┘
             >;
         };
