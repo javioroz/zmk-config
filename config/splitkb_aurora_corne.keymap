@@ -26,9 +26,9 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;    // <---[[moderate duration]]
+            tapping-term-ms = <500>;    // <---[[moderate duration]]
             quick-tap-ms = <0>;
-            flavor = "balanced";
+            flavor = "balanced";        // <--- also "tap-preferred"
             bindings = <&kp>, <&kp>;
         };
     };
@@ -56,7 +56,7 @@
 // |  LSHFT  |    Z    |    X    |    C    |    V    |    B    |   |    K    |    M    |    ,    |    .    |    /    | ENTER   |
    &kp LSHFT  &kp Z      &kp X     &kp C     &kp V     &kp B        &kp K     &kp M     &kp COMMA  &kp DOT   &kp FSLH   &kp  RET
 // └─────────┴─────────┼─────────┴───┬─────┴──────┬──┴─────────┤   ├─────────┴──┬──────┴─────┬───┴─────────┼─────────┴─────────┘ 
-                        &mt LALT RET  &mo LOWER  &bhm SPACE LCTRL  &mt SPACE RSHFT  &mo RAISE  &mt LGUI CAPS
+                        &mt LALT RET  &mo LOWER  &bhm LCTRL SPACE  &mt RSHFT SPACE &mo RAISE  &mt LGUI CAPS
 //                     └─────────────┴────────────┴────────────┘   └────────────┴────────────┴─────────────┘
             >;
         };
